@@ -1,4 +1,4 @@
-import 'package:bakery_order_system/features/dashboard/presentation/dashboard_view.dart';
+import 'package:bakery_order_system/features/orders/presentation/dashboard_view.dart';
 import 'package:bakery_order_system/util/pages/not_found_page.dart';
 import 'package:flutter/material.dart';
 

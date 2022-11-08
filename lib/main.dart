@@ -1,16 +1,31 @@
+import 'package:bakery_order_system/config/setup/ioc.dart';
 import 'package:bakery_order_system/config/theme/theme.dart';
+import 'package:bakery_order_system/features/products/data/product_repo.dart';
 import 'package:bakery_order_system/routing/bloc/navigation_bloc.dart';
 import 'package:bakery_order_system/routing/pageType.dart';
 import 'package:bakery_order_system/util/pages/default_page.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flow_builder/flow_builder.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  runApp(BlocProvider(
-    create: (_) => NavigationBloc(),
-    child: const BakeryApp(),
-  ));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  await IOC.setupMain();
+
+  runApp(MultiRepositoryProvider(
+      providers: [
+        RepositoryProvider<ProductRepository>(
+          create: (_) => ProductRepository(),
+        ),
+      ],
+      child: BlocProvider(
+        create: (_) => NavigationBloc(),
+        child: const BakeryApp(),
+      )));
 }
 
 class BakeryApp extends StatelessWidget {

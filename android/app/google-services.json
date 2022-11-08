@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "757827500353",
+    "project_id": "bakeryapp-a6c40",
+    "storage_bucket": "bakeryapp-a6c40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757827500353:android:525691a718cd3acfa609c0",
+        "android_client_info": {
+          "package_name": "com.mlandsgaard.bakery_order_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757827500353-rrq1hds26h3ddend1hpcf3qm42onc2i0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5GOXPjOcQbbJvRXKzZ9j1TsaPpMDIyNk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "757827500353-rrq1hds26h3ddend1hpcf3qm42onc2i0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
