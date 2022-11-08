@@ -1,4 +1,5 @@
 import 'package:bakery_order_system/features/orders/presentation/dashboard_view.dart';
+import 'package:bakery_order_system/features/products/presentation/product_view.dart';
 import 'package:bakery_order_system/util/pages/not_found_page.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ extension PageTypeMapper on PageType {
     PageType.orders: const DashboardView(),
     PageType.history: const NotFoundPage(),
     PageType.messages: const NotFoundPage(),
-    PageType.products: const NotFoundPage(),
+    PageType.products: const ProductView(),
     PageType.settings: const NotFoundPage(),
   };
 }

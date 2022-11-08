@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Order {
-  String id;
+  String? id;
   String customerId;
   int orderNo;
   Timestamp timestamp;
@@ -9,7 +9,7 @@ class Order {
   OrderStatus status;
   String comment;
 
-  Order(this.id,
+  Order(
       {required this.customerId,
       required this.orderNo,
       required this.timestamp,

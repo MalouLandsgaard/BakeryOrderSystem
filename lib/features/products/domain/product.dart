@@ -2,7 +2,7 @@ import 'package:bakery_order_system/features/orders/domain/category.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Product {
-  String id;
+  String? id;
   String name;
   String description;
   double price;
@@ -10,8 +10,7 @@ class Product {
   String? path;
   bool active;
 
-  Product(
-    this.id, {
+  Product({
     required this.name,
     required this.description,
     required this.price,
