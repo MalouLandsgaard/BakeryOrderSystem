@@ -1,4 +1,4 @@
-import 'package:bakery_order_system/features/orders/domain/category.dart';
+import 'package:bakery_order_system/features/products/domain/category.dart';
 import 'package:bakery_order_system/features/products/bloc/product_bloc.dart';
 import 'package:bakery_order_system/features/products/domain/product.dart';
 
@@ -11,6 +11,9 @@ class ProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProductBloc, ProductState>(builder: (context, state) {
+      if (state is ProductInitial) {
+        context.read<ProductBloc>().add(FetchProducts());
+      }
       if (state is ProductsLoaded) {
         return Column(children: [
           _productList(state.products),

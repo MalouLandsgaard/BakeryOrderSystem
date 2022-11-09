@@ -13,20 +13,24 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
 
     on<FetchProducts>(
       (event, emit) async {
-        _fetchData;
+        await _fetchData(emit);
       },
     );
 
     on<NewProduct>(
       (event, emit) async {
         await _productRepo.addProductData(event.product);
-        _fetchData;
+        await _fetchData(emit);
       },
     );
   }
 
   _fetchData(Emitter<ProductState> emit) async {
-    List<Product> listofProducts = await _productRepo.getAllProductData();
-    emit(ProductsLoaded(products: listofProducts));
+    try {
+      List<Product> listofProducts = await _productRepo.getAllProductData();
+      emit(ProductsLoaded(products: listofProducts));
+    } catch (e) {
+      print(e);
+    }
   }
 }

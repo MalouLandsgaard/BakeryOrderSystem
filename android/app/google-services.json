@@ -29,6 +29,13 @@
             {
               "client_id": "757827500353-rrq1hds26h3ddend1hpcf3qm42onc2i0.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "757827500353-rmhbbbi04tq28mlooamfbcgj8mt9o19u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bakeryOrderSystem"
+              }
             }
           ]
         }

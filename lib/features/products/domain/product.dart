@@ -1,4 +1,4 @@
-import 'package:bakery_order_system/features/orders/domain/category.dart';
+import 'package:bakery_order_system/features/products/domain/category.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Product {
@@ -24,7 +24,7 @@ class Product {
       'name': name,
       'description': description,
       'price': price,
-      'category': category,
+      'category': category.name,
       'active': active,
       'path': path ?? "",
     };
@@ -35,7 +35,7 @@ class Product {
         name = doc.data()!["name"],
         description = doc.data()!["description"],
         price = doc.data()!["price"],
-        category = doc.data()!["category"],
+        category = CategoryMapper.fromString(doc.data()!["category"]),
         active = doc.data()!["active"],
         path = doc.data()!["path"];
 }
