@@ -1,5 +1,6 @@
 import 'package:bakery_order_system/config/setup/firebase_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get_it/get_it.dart';
 
 class IOC {
@@ -10,6 +11,8 @@ class IOC {
 
     _locator.registerSingleton<FirebaseFirestore>(FirebaseFirestore.instance,
         instanceName: 'firestore');
+    _locator.registerSingleton<FirebaseStorage>(FirebaseStorage.instance,
+        instanceName: 'storage');
   }
 
   static T injectSync<T extends Object>(String instanceName) =>

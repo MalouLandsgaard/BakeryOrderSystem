@@ -1,5 +1,7 @@
 import 'package:bakery_order_system/config/setup/ioc.dart';
 import 'package:bakery_order_system/config/theme/theme.dart';
+import 'package:bakery_order_system/features/file_upload/bloc/file_upload_bloc.dart';
+import 'package:bakery_order_system/features/file_upload/data/upload_repo.dart';
 import 'package:bakery_order_system/features/orders/data/order_repo.dart';
 import 'package:bakery_order_system/features/products/bloc/product_bloc.dart';
 import 'package:bakery_order_system/features/products/data/product_repo.dart';
@@ -28,6 +30,9 @@ Future<void> main() async {
         RepositoryProvider<OrderRepository>(
           create: (_) => OrderRepository(),
         ),
+        RepositoryProvider<UploadRepository>(
+          create: (_) => UploadRepository(),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -35,6 +40,9 @@ Future<void> main() async {
           BlocProvider<ProductBloc>(
               create: (context) =>
                   ProductBloc(context.read<ProductRepository>())),
+          BlocProvider<FileUploadBloc>(
+              create: (context) =>
+                  FileUploadBloc(context.read<UploadRepository>())),
         ],
         child: const BakeryApp(),
       )));
