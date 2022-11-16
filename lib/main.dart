@@ -61,7 +61,7 @@ class BakeryApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Maizie',
+      title: "Maizie",
       theme: AppThemeData.appThemeData[AppThemeEnum.lightTheme],
       debugShowCheckedModeBanner: false,
       home: FlowBuilder(

@@ -32,6 +32,7 @@ class ProductView extends StatelessWidget {
                   // products[index].path!.isNotEmpty
                   //     ? Image.network(products[index].path!)
                   //     : Container(),
+                  Text(products[index].path ?? "No path"),
                   Text(products[index].name),
                   Text(products[index].category.name),
                   Text(products[index].price.toString()),

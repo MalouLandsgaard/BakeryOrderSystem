@@ -16,4 +16,15 @@ extension PageTypeMapper on PageType {
     PageType.products: const ProductView(),
     PageType.settings: const NotFoundPage(),
   };
+
+  String get pageTitle => pageTitles[this] ?? pageTitles[PageType.none]!;
+
+  static Map<PageType, String> pageTitles = {
+    PageType.none: "Unknown",
+    PageType.orders: "Orders",
+    PageType.history: "History",
+    PageType.messages: "Messages",
+    PageType.products: "Products",
+    PageType.settings: "Settings",
+  };
 }

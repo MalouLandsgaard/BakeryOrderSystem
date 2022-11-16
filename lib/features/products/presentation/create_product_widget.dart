@@ -20,17 +20,26 @@ class CreateProductWidget extends StatelessWidget {
       children: [
         const FileUploadWidget(),
         BlocListener<FileUploadBloc, FileUploadState>(
-            listener: (context, state) {
-              print(state.toString());
-              if (state is UploadSuccess) {
-                _imagePath = state.fileUrl;
-              }
-            },
-            child: Text(_imagePath ?? "No image path")),
-        ElevatedButton(
-            onPressed: () =>
-                context.read<ProductBloc>().add(NewProduct(_testProduct())),
-            child: const Text("Add product")),
+          listener: (context, state) {
+            print("product state: " + state.toString());
+            if (state is UploadSuccess) {
+              print(state.fileUrl.length);
+              if (state.fileUrl.isNotEmpty) _imagePath = state.fileUrl;
+
+              print("test " + (_imagePath == state.fileUrl).toString());
+            }
+          },
+          child: Column(
+            children: [
+              Text(_imagePath ?? "No file uploaded"),
+              ElevatedButton(
+                  onPressed: () => context
+                      .read<ProductBloc>()
+                      .add(NewProduct(_testProduct())),
+                  child: const Text("Add product")),
+            ],
+          ),
+        )
       ],
     );
   }

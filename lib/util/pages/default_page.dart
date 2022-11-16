@@ -28,6 +28,7 @@ class DefaultPage extends StatelessWidget {
         drawer: (getDeviceType(size) == DeviceScreenType.desktop)
             ? null
             : Drawer(
+                width: 200,
                 child: DefaultSideMenu(),
               ),
         body: getValueForScreenType<Widget>(

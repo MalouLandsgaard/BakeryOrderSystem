@@ -7,10 +7,11 @@ enum TextColorEnum {
 }
 
 const lightColorScheme = ColorScheme.light(
-  primary: Colors.blue,
-  secondary: Color(0xFFC1C1C3),
-  onBackground: Color(0xFF324155),
-);
+    primary: Color(0xFFF84F39),
+    secondary: Colors.blue,
+    onBackground: Color(0xFF324155),
+    surface: Colors.white,
+    background: Color(0xFFC1C1C3));
 
 const lightTextColors = {
   TextColorEnum.display: Color(0xFF324155),
